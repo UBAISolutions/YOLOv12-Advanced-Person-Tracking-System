@@ -1,5 +1,5 @@
-# YOLOv12-Advanced-Person-Tracking-System
-YOLOv12 Advanced Person Tracking System  A sophisticated real-time person tracking system using YOLOv12 with facial recognition-based re-identification, movement trail visualization, and comprehensive analytics reporting.
+# 🎯 YOLOv12 Advanced Person Tracking System
+
 A sophisticated real-time person tracking system using YOLOv12 with facial recognition-based re-identification, movement trail visualization, and comprehensive analytics reporting.
 
 ## 🌟 Features
@@ -359,3 +359,81 @@ def __init__(self, video_path="data/your_video.mp4", similarity_threshold=0.6):
 - **Processing Speed**: ~30 FPS on modern hardware
 - **Memory Usage**: Limited to 30 known faces maximum
 - **Detection Range**: Works best at 1-5 meter distances
+
+## � Troubleshooting
+
+### No Detections Visible
+- Check if video file exists in `data/` folder
+- Ensure good lighting in video
+- Try lowering confidence threshold in code
+
+### Video Won't Open
+- Verify video format is supported (MP4, AVI, MOV, MKV)
+- Check file path is correct
+- Ensure video file is not corrupted
+
+## 📝 Usage Rights
+
+This is a clean, simplified implementation for educational and personal use.
+
+---
+
+**Note**: This is a simplified, clean version focused on core functionality.
+
+## 📂 Project Structure
+```
+
+.
+├── data/people_walking.mp4             # Input video file
+├── people_tracking.py                  # Main tracking script
+├── yolov8n.pt                          # YOLOv8 Nano model weights
+├── data/people_walking_output.mp4      # Output video (generated)
+└── README.md
+
+````
+
+## 🚀 Installation
+
+1. **Clone this repository**:
+```bash
+git clone https://github.com/di37/yolov8-person-tracker.git
+cd yolov8-person-tracker
+````
+
+2. **Install dependencies**:
+
+```bash
+pip install ultralytics opencv-python
+```
+
+3. **Download YOLOv8 model weights**:
+
+```bash
+yolo download model=yolov8n.pt
+```
+
+Alternatively, you can manually place `yolov8n.pt` in the project directory.
+
+## ▶️ Usage
+
+Run the script with:
+
+```bash
+python people_tracking.py
+```
+
+* Press **`q`** to quit early.
+* The processed video will be saved as `people_with_trail_output.mp4`.
+
+## ⚙️ Key Parameters
+
+* `classes=[0]`: Detect only persons.
+* `maxlen=30`: Number of recent points stored for trails.
+* `appear[oid] >= 5`: Minimum frames before confirming a person.
+* `fps`: Dynamically detected from input video; defaults to 30.
+
+---
+
+**Author**: [Your Name]  
+**Repository**: [Your GitHub Repository URL]  
+**Last Updated**: August 2025
